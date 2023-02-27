@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fir-b4f63": {
+      "hosting": {
+        "DWEC-U05-Proyecto-Angular-DavidCamposMagro": [
+          "fir-b4f63"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fir-b4f63"
+  }
+}

@@ -97,6 +97,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "DWEC-U05-Proyecto-Angular-DavidCamposMagro:build:production",
+            "firebaseProject": "fir-b4f63",
+            "firebaseHostingSite": "fir-b4f63"
+          }
         }
       }
     }
