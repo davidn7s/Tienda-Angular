@@ -34,3 +34,21 @@
     margin-left: 10px;
     color: white;
   }
+
+
+  .toolbar #person {
+    height: 40px;
+    margin: 0 8px;
+  }
+
+  .toolbar #cart {
+    height: 40px;
+    width: 40px;
+    margin: 0 8px;
+  }
+
+
+  .toolbar #person:hover,
+  .toolbar #cart:hover{
+    opacity: 0.8;
+  }

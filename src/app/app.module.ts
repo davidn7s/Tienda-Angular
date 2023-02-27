@@ -21,6 +21,7 @@ import { FireServiceProvider } from 'src/providers/api-service/fire-service';
 import { AngularFireModule } from '@angular/fire/compat';
 import { FirebaseAuthService } from 'src/providers/api-service/firebase-auth-service';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -32,6 +33,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     NavbarComponent,
     LoginComponent,
     RegistroComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

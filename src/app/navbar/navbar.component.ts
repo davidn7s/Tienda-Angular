@@ -20,15 +20,26 @@ export class NavbarComponent {
   menu(){
     this.navigate = [
       {
-        title: 'Acerca de',
-        url: '/acerca',
-      },      {
-        title: 'Acerca de',
-        url: '/acerca',
-      },      {
+        title: 'Pianos',
+        url: '/pianos',
+      },
+      {
+        title: 'Guitarras',
+        url: '/guitarras',
+      },      
+      {
+        title: 'Viento Metal',
+        url: '/vmetal',
+      },
+      {
+        title: 'Viento madera',
+        url: '/vmadera',
+      },
+      {
         title: 'Acerca de',
         url: '/acerca',
       },
+
     ];
   }
 
