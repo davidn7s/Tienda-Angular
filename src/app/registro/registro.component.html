@@ -1,0 +1,37 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+
+    <h3>¿Eres un nuevo cliente?, Registrese</h3>
+    <label>Nombre</label>
+    <input type="text" formControlName="name" class="form-control"  />
+
+    <label>Apellidos</label>
+    <input type="text" formControlName="apellidos" class="form-control"  />
+
+  
+    <label>Email</label>
+    <input type="email" formControlName="email" class="form-control" />
+
+    <label>Dirección</label>
+    <input type="text" formControlName="direccion" class="form-control" />
+
+    <label>Código Postal</label>
+    <input type="text" formControlName="cp" class="form-control" />
+
+    <label>Teléfono</label>
+    <input type="tel" formControlName="tfn" class="form-control" />
+
+    
+   
+
+    <label>Contraseña</label>
+    <input type="password" formControlName="password" class="form-control" />
+   
+
+    <label>Repetir contraseña</label>
+    <input type="password" formControlName="repeatPassword" class="form-control" />
+  <br>
+    <div class="text-center">
+        <strong><a href="login">¿Tiene usted ya una cuenta?</a></strong><br>
+        <button class="btn btn-success mr-1" [disabled]="registerForm.invalid">Registrarse</button>
+    </div>
+</form>

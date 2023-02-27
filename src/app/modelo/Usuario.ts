@@ -7,6 +7,7 @@ export class Usuario{
     cod_postal!:number;
     direccion!:string;
     telefono!:number;
+
     
     //pedidosRealizados:Pedido[];
     //productosCarro:ProductoCarro[];

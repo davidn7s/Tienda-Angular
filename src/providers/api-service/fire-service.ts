@@ -238,12 +238,12 @@ export class FireServiceProvider {
     //| Inserts |
     //===========
 
-    insertarUsuario(datosNuevoUsuario: Usuario, opcion:boolean): Promise<Usuario> {
+    insertarUsuario(datosNuevoUsuario: Usuario): Promise<Usuario> {
         let promise = new Promise<Usuario>((resolve, reject) => {
             datosNuevoUsuario.id = this.angularFirestore.collection("Usuarios").ref.doc().id;
             this.angularFirestore.collection("Usuarios").doc(datosNuevoUsuario.id).set(JSON.parse(JSON.stringify(datosNuevoUsuario)))
                 .then(() => {
-                    if(opcion)
+                    
                     resolve(datosNuevoUsuario);
                 })
                 .catch((error: Error) => {

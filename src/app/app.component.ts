@@ -7,7 +7,4 @@ import { Usuario } from './modelo/Usuario';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'DWEC-U05-Proyecto-Angular-DavidCamposMagro';
-
- 
 }
