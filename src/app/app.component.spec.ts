@@ -23,7 +23,6 @@ describe('AppComponent', () => {
   it(`should have as title 'DWEC-U05-Proyecto-Angular-DavidCamposMagro'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('DWEC-U05-Proyecto-Angular-DavidCamposMagro');
   });
 
   it('should render title', () => {

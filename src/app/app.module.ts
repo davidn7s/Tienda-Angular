@@ -22,6 +22,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { FirebaseAuthService } from 'src/providers/api-service/firebase-auth-service';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { HomeComponent } from './home/home.component';
+import { GuitarrasComponent } from './guitarras/guitarras.component';
+import { GuitarraComponent } from './guitarra/guitarra.component';
 
 
 
@@ -34,6 +36,8 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     RegistroComponent,
     HomeComponent,
+    GuitarrasComponent,
+    GuitarraComponent,
   ],
   imports: [
     BrowserModule,

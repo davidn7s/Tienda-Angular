@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FireServiceProvider } from 'src/providers/api-service/fire-service';
 import { Categoria } from '../modelo/Categoria';
 import { Producto } from '../modelo/Producto';
@@ -18,7 +19,8 @@ export class HomeComponent implements OnInit{
   categorias:Array<Categoria>= new Array<Categoria>();
 
   constructor(private navBar:NavbarComponent,
-              private fireService:FireServiceProvider){}
+              private fireService:FireServiceProvider,
+              private router:Router){}
 
 
 
@@ -70,7 +72,7 @@ export class HomeComponent implements OnInit{
 
 
   producto(producto:Producto){
-    
+    this.router.navigate(['/guitarras/guitarra', producto])
   }
 
 
