@@ -8,6 +8,8 @@ export class Usuario{
     direccion!:string;
     telefono!:number;
 
+
+    administrador:boolean=false;
     
     //pedidosRealizados:Pedido[];
     //productosCarro:ProductoCarro[];
@@ -26,6 +28,11 @@ export class Usuario{
         usuario.email=usuarioJson['email'];
         usuario.cod_postal=usuarioJson['cod_postal'];
         usuario.telefono=usuarioJson['telefono'];
+        usuario.administrador=usuarioJson['administrador'];
+
+        if(usuario.administrador==undefined ||usuario.administrador==null){
+            usuario.administrador=false;
+        }
       
        
         /*if(usuarioJson['pedidosRealizados'] != null){

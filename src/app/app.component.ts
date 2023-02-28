@@ -7,4 +7,6 @@ import { Usuario } from './modelo/Usuario';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  usuarioGlobal:Usuario=new Usuario();
 }

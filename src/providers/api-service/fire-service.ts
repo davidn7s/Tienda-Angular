@@ -135,6 +135,28 @@ export class FireServiceProvider {
 
 
 
+    getCategorias(): Promise<Categoria[]> {
+        let promise = new Promise<Categoria[]>((resolve, reject) => {
+          const categoriaRef = this.angularFirestore.collection('Categorias');
+          const snapshot = categoriaRef.get().toPromise()
+            .then((data: any) => {
+              let categorias = new Array<Categoria>();
+              data.forEach((element:any) => {
+                let categoriaJson = element.data();
+                let categoria = Categoria.createFromJsonObject(categoriaJson);
+                categorias.push(categoria);
+              });
+              resolve(categorias);
+            })
+            .catch((error: Error) => {
+              reject(error.message);
+            });
+        });
+        return promise;
+      }
+
+
+
 //======================================================================================
 
     //==============
@@ -185,7 +207,6 @@ export class FireServiceProvider {
         let promise = new Promise<Boolean>((resolve, reject) => {
             this.angularFirestore.collection('Categorias').doc(categoria.id).delete().then(
                 (data: any) => { 
-                    this.removeFile(categoria.imagen);
                     resolve(true);
                 }
             )

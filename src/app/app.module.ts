@@ -47,7 +47,7 @@ import { HomeComponent } from './home/home.component';
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
     AngularFireModule.initializeApp(environment.firebaseConfig),AngularFirestoreModule ],
-  providers: [FireServiceProvider,FirebaseAuthService],
+  providers: [FireServiceProvider,FirebaseAuthService,NavbarComponent,AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

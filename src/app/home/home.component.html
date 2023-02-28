@@ -1,1 +1,106 @@
-<p>home works!</p>
+<div class="container">
+
+    <!--Pianos-->
+    <div class="row">
+        <div class="col-12">
+            <h3>Pianos</h3>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <ng-container *ngFor="let p of pianos">
+            <div class="col-4" (click)="producto(p)">
+                <table>
+                    <tr>
+                        <th><img height="150" width="150" src={{p.imagen}}></th>
+                    </tr>
+                    <tr>
+                        <td>{{p.nombre}}</td>
+                    </tr>
+                </table>
+            </div>
+
+        </ng-container>
+    </div>
+
+
+    <!--Guitarras-->
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <h3>Guitarras</h3>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <ng-container *ngFor="let g of guitarras">
+            <div class="col-4"  (click)="producto(g)">
+                <table>
+                    <tr>
+                        <th><img height="150" width="150" src={{g.imagen}}></th>
+                    </tr>
+                    <tr>
+                        <td>{{g.nombre}}</td>
+                    </tr>
+                </table>
+            </div>
+
+        </ng-container>
+    </div>
+
+
+    <!--Viento metal-->
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <h3>Viento Metal</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <ng-container *ngFor="let vm of vientoMetal">
+            <div class="col-4"  (click)="producto(vm)">
+                <table>
+                    <tr>
+                        <th><img height="150" width="150" src={{vm.imagen}}></th>
+                    </tr>
+                    <tr>
+                        <td>{{vm.nombre}}</td>
+                    </tr>
+                </table>
+            </div>
+
+        </ng-container>
+    </div>
+
+
+    <!--Viento madera-->
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <h3>Viento Madera</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <ng-container *ngFor="let vma of vientoMadera">
+            <div class="col-4"  (click)="producto(vma)">
+                <table>
+                    <tr>
+                        <th><img height="150" width="150" src={{vma.imagen}}></th>
+                    </tr>
+                    <tr>
+                        <td>{{vma.nombre}}</td>
+                    </tr>
+                </table>
+            </div>
+
+        </ng-container>
+    </div>
+
+</div>
