@@ -3,14 +3,14 @@ import { ActivatedRoute } from '@angular/router';
 import { Producto } from '../modelo/Producto';
 
 @Component({
-  selector: 'app-guitarra',
-  templateUrl: './guitarra.component.html',
-  styleUrls: ['./guitarra.component.scss']
+  selector: 'app-producto',
+  templateUrl: './producto.component.html',
+  styleUrls: ['./producto.component.scss']
 })
-export class GuitarraComponent implements OnInit{
-
+export class ProductoComponent implements OnInit{
   producto:Producto= new Producto();
   sub:any;
+  cantidad:number=1
 
 
   constructor(private route: ActivatedRoute) {}
@@ -21,6 +21,19 @@ export class GuitarraComponent implements OnInit{
       console.log(this.producto)
     })
     
+  }
+
+
+  comprar(){
+    console.log(this.cantidad)
+  }
+
+  comprobar(){
+    if(this.cantidad>this.producto.stock){
+      this.cantidad=this.producto.stock;
+    }else if(this.cantidad<=0){
+      this.cantidad=1;
+    }
   }
 
 }

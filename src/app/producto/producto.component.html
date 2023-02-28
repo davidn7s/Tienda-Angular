@@ -1,0 +1,25 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-4">
+            <p id="imagen"><img width="200px" src="{{producto.imagen}}"></p>
+
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <h4>{{producto.nombre}}</h4>
+                <hr>
+                <p>{{producto.descripcion}}</p>
+                <hr>
+                <div id="precio" class="d-flex justify-content-between"><strong>{{producto.precio}}€</strong>
+                    <div><label>Cantidad: &nbsp;</label> <input type="number" (change)="comprobar()"
+                            [(ngModel)]="cantidad" min=1 max="{{producto.stock}}"></div>
+                </div>
+                <hr>
+                <div id="boton"><button type="button" class="btn btn-secondary btn-lg"
+                        (click)="comprar()">Comprar</button></div>
+
+            </div>
+        </div>
+    </div>
+</div>

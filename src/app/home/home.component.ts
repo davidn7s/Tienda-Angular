@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit{
 
 
   producto(producto:Producto){
-    this.router.navigate(['/guitarras/guitarra', producto])
+    this.router.navigate(['/producto', producto])
   }
 
 

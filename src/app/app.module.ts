@@ -23,7 +23,8 @@ import { FirebaseAuthService } from 'src/providers/api-service/firebase-auth-ser
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { HomeComponent } from './home/home.component';
 import { GuitarrasComponent } from './guitarras/guitarras.component';
-import { GuitarraComponent } from './guitarra/guitarra.component';
+import { ProductoComponent } from './producto/producto.component';
+
 
 
 
@@ -37,7 +38,7 @@ import { GuitarraComponent } from './guitarra/guitarra.component';
     RegistroComponent,
     HomeComponent,
     GuitarrasComponent,
-    GuitarraComponent,
+    ProductoComponent,
   ],
   imports: [
     BrowserModule,
