@@ -65,10 +65,6 @@ export class HomeComponent implements OnInit{
   }
 
 
-  ngAfterViewInit(){
-    console.log('Home')
-    this.navBar.recargarUsuario();
-  }
 
 
   producto(producto:Producto){

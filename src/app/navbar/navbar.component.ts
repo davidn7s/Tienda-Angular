@@ -16,7 +16,6 @@ export class NavbarComponent {
 
   public navigate: any;
   usuarioGlobal: Usuario = new Usuario();
-  conectado=false;
 
   constructor(private globalService:GlobalServiceService,
     private authService:FirebaseAuthService){
@@ -79,22 +78,21 @@ export class NavbarComponent {
     }
   }
 
-  recargarUsuario(){
-    this.usuarioGlobal=this.globalService.usuarioGlobal;
-    if(this.usuarioGlobal.id!=undefined){
-      this.conectado=true
-      console.log(this.conectado)
-    }
-    this.usuarioGlobal=this.usu;
-    this.menu()
-    console.log(this.usuarioGlobal)
-    
-  }
 
   logOut(){
     this.usuarioGlobal=new Usuario();
     this.globalService.usuarioGlobal=new Usuario();
     this.authService.logoutUser();
+  }
+
+  conectado(){
+    this.usuarioGlobal=this.globalService.usuarioGlobal;
+    this.menu();
+    if(this.usuarioGlobal.id!=undefined){
+      return true;
+    }else{
+      return false;
+    }
   }
 
  

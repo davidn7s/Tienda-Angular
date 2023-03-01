@@ -59,7 +59,6 @@ export class LoginComponent {
             this.error = false;
             //Volvemos global al usuario que nos hemos traido
             this.globalService.usuarioGlobal=data;
-            this.navBar.recargarUsuario();
             this.router.navigate(['/home']);
             this.app.usuarioGlobal=data;
 

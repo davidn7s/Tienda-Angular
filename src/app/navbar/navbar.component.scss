@@ -47,8 +47,17 @@
     margin: 0 8px;
   }
 
+  
+  .toolbar #logout {
+    height: 40px;
+    width: 40px;
+    margin: 0 8px;
+  }
+
 
   .toolbar #person:hover,
-  .toolbar #cart:hover{
+  .toolbar #cart:hover,
+  .toolbar #logout:hover
+  {
     opacity: 0.8;
   }
