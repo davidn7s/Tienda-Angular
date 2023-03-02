@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <h3>Viento Metal</h3>
+        <input type="text" matInput placeholder="Buscar" name= "buscar" [(ngModel)]= "textoBuscar">
+    </div>
+
+    
+
+    <div class="row">
+        <ng-container *ngFor="let v of vmetales">
+            <div class="col-4" (click)="producto(v)">
+                <table>
+                    <tr>
+                        <th class="centrar"><img height="150" width="150" src={{v.imagen}}></th>
+                    </tr>
+                    <tr>
+                        <td class="centrar">{{v.nombre}}</td>
+                    </tr>
+                    <tr>
+                        <td class="centrar"><strong>{{v.precio}}€</strong></td>
+                    </tr>
+                </table>
+                <br>
+            </div>
+
+        </ng-container>
+    </div>
+</div>
+
+

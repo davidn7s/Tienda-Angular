@@ -5,8 +5,12 @@ import { AcercaComponent } from './acerca/acerca.component';
 import { GuitarrasComponent } from './guitarras/guitarras.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PianosComponent } from './pianos/pianos.component';
 import { ProductoComponent } from './producto/producto.component';
 import { RegistroComponent } from './registro/registro.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { VientoMaderaComponent } from './viento-madera/viento-madera.component';
+import { VientoMetalComponent } from './viento-metal/viento-metal.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home', pathMatch:'full'},
@@ -15,7 +19,11 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'home',component: HomeComponent},
   {path:'guitarras',component:GuitarrasComponent},
-  {path:'producto',component:ProductoComponent}
+  {path:'producto',component:ProductoComponent},
+  {path:'usuarios',component:UsuariosComponent},
+  {path:'pianos',component:PianosComponent},
+  {path:'vmetal',component:VientoMetalComponent},
+  {path:'vmadera',component:VientoMaderaComponent}
 ];
 
 @NgModule({

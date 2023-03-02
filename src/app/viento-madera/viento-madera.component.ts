@@ -7,14 +7,15 @@ import { Producto } from '../modelo/Producto';
 import { Usuario } from '../modelo/Usuario';
 
 @Component({
-  selector: 'app-guitarras',
-  templateUrl: './guitarras.component.html',
-  styleUrls: ['./guitarras.component.scss']
+  selector: 'app-viento-madera',
+  templateUrl: './viento-madera.component.html',
+  styleUrls: ['./viento-madera.component.scss']
 })
-export class GuitarrasComponent {
+export class VientoMaderaComponent {
   categorias:Array<Categoria>= new Array<Categoria>();
-  guitarras:Array<Producto>= new Array<Producto>();
+  vmaderas:Array<Producto>= new Array<Producto>();
   usu:Usuario= new Usuario();
+  textoBuscar:any=''
 
   constructor(private fireService:FireServiceProvider,
               private globalService:GlobalServiceService,
@@ -22,19 +23,19 @@ export class GuitarrasComponent {
 
   ngAfterViewInit(){
     this.usu=this.globalService.usuarioGlobal;
-    this.getGuitarras();
+    this.getMetales();
    
   }
 
-  getGuitarras(){
+  getMetales(){
     this.fireService.getCategorias()
     .then((element)=>{
       this.categorias=element;
 
       this.categorias.forEach((data)=>{
         data.productos.forEach((producto)=>{
-          if(producto.categoria=='Guitarra'){
-                this.guitarras.push(producto);
+          if(producto.categoria=='Viento Madera'){
+                this.vmaderas.push(producto);
           }
         })
       })

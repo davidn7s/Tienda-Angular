@@ -6,7 +6,6 @@ import { FirebaseAuthService } from 'src/providers/api-service/firebase-auth-ser
 import { AppComponent } from '../app.component';
 import { GlobalServiceService } from '../global-service.service';
 import { Usuario } from '../modelo/Usuario';
-import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +28,6 @@ export class LoginComponent {
     private fireAuth: FirebaseAuthService,
     private fireService: FireServiceProvider,
     private globalService:GlobalServiceService,
-    private navBar:NavbarComponent,
     private router:Router,
     private app:AppComponent) { }
 

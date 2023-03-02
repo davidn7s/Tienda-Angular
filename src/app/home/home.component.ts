@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FireServiceProvider } from 'src/providers/api-service/fire-service';
 import { Categoria } from '../modelo/Categoria';
 import { Producto } from '../modelo/Producto';
-import { NavbarComponent } from '../navbar/navbar.component';
+
 
 @Component({
   selector: 'app-home',
@@ -18,8 +18,7 @@ export class HomeComponent implements OnInit{
   vientoMadera:Array<Producto>= new Array<Producto>();
   categorias:Array<Categoria>= new Array<Categoria>();
 
-  constructor(private navBar:NavbarComponent,
-              private fireService:FireServiceProvider,
+  constructor(private fireService:FireServiceProvider,
               private router:Router){}
 
 
@@ -38,7 +37,6 @@ export class HomeComponent implements OnInit{
                 this.pianos.push(producto);
               break;
             case 'Guitarra':
-              console.log(producto)
               if(this.guitarras.length<3)
                 this.guitarras.push(producto);
               break;

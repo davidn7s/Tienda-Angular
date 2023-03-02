@@ -7,14 +7,16 @@ import { Producto } from '../modelo/Producto';
 import { Usuario } from '../modelo/Usuario';
 
 @Component({
-  selector: 'app-guitarras',
-  templateUrl: './guitarras.component.html',
-  styleUrls: ['./guitarras.component.scss']
+  selector: 'app-pianos',
+  templateUrl: './pianos.component.html',
+  styleUrls: ['./pianos.component.scss']
 })
-export class GuitarrasComponent {
+export class PianosComponent {
+
   categorias:Array<Categoria>= new Array<Categoria>();
-  guitarras:Array<Producto>= new Array<Producto>();
+  pianos:Array<Producto>= new Array<Producto>();
   usu:Usuario= new Usuario();
+  textoBuscar:any=''
 
   constructor(private fireService:FireServiceProvider,
               private globalService:GlobalServiceService,
@@ -22,19 +24,19 @@ export class GuitarrasComponent {
 
   ngAfterViewInit(){
     this.usu=this.globalService.usuarioGlobal;
-    this.getGuitarras();
+    this.getPianos();
    
   }
 
-  getGuitarras(){
+  getPianos(){
     this.fireService.getCategorias()
     .then((element)=>{
       this.categorias=element;
 
       this.categorias.forEach((data)=>{
         data.productos.forEach((producto)=>{
-          if(producto.categoria=='Guitarra'){
-                this.guitarras.push(producto);
+          if(producto.categoria=='Piano'){
+                this.pianos.push(producto);
           }
         })
       })
@@ -48,4 +50,5 @@ export class GuitarrasComponent {
   producto(producto:any){
     this.router.navigate(['/producto', producto])
   }
+  
 }

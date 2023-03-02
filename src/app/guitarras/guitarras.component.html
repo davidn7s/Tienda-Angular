@@ -1,1 +1,27 @@
-<p>guitarras works!</p>
+<div class="container">
+    <div class="row">
+        <h3>Guitarras</h3>
+    </div>
+
+    <div class="row">
+        <ng-container *ngFor="let g of guitarras">
+            <div class="col-4" (click)="producto(g)">
+                <table>
+                    <tr>
+                        <th class="centrar"><img height="150" width="150" src={{g.imagen}}></th>
+                    </tr>
+                    <tr>
+                        <td class="centrar">{{g.nombre}}</td>
+                    </tr>
+                    <tr>
+                        <td class="centrar"><strong>{{g.precio}}€</strong></td>
+                    </tr>
+                </table>
+                <br>
+            </div>
+
+        </ng-container>
+    </div>
+</div>
+
+

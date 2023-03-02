@@ -156,6 +156,27 @@ export class FireServiceProvider {
       }
 
 
+      getUsuarios(): Promise<Usuario[]> {
+        let promise = new Promise<Usuario[]>((resolve, reject) => {
+          const usuarioRef = this.angularFirestore.collection('Usuarios');
+          const snapshot = usuarioRef.get().toPromise()
+            .then((data: any) => {
+              let usuarios = new Array<Usuario>();
+              data.forEach((element:any) => {
+                let usuarioJson = element.data();
+                let usuario = Usuario.createFromJsonObject(usuarioJson);
+                usuarios.push(usuario);
+              });
+              resolve(usuarios);
+            })
+            .catch((error: Error) => {
+              reject(error.message);
+            });
+        });
+        return promise;
+      }
+
+
 
 //======================================================================================
 

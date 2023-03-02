@@ -95,5 +95,9 @@ export class NavbarComponent {
     }
   }
 
+  navegar(link:any){
+    console.log(link)
+  }
+
  
 }
