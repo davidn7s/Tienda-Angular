@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row">
         <h3>Viento Metal</h3>
-        <input type="text" matInput placeholder="Buscar" name= "buscar" [(ngModel)]= "textoBuscar">
+        <input type="text"  placeholder="Buscar" name= "buscar" [(ngModel)]= "textoBuscar">
     </div>
 
     
 
     <div class="row">
-        <ng-container *ngFor="let v of vmetales">
+        <ng-container *ngFor="let v of vmetales | filtro: textoBuscar">
             <div class="col-4" (click)="producto(v)">
                 <table>
                     <tr>

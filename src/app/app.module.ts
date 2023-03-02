@@ -29,6 +29,7 @@ import { PianosComponent } from './pianos/pianos.component';
 import { UpdateProdComponent } from './update-prod/update-prod.component';
 import { VientoMetalComponent } from './viento-metal/viento-metal.component';
 import { VientoMaderaComponent } from './viento-madera/viento-madera.component';
+import { FilterPipe } from './pipe/filter.pipe';
 
 
 
@@ -49,6 +50,7 @@ import { VientoMaderaComponent } from './viento-madera/viento-madera.component';
     UpdateProdComponent,
     VientoMetalComponent,
     VientoMaderaComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

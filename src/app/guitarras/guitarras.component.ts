@@ -15,6 +15,7 @@ export class GuitarrasComponent {
   categorias:Array<Categoria>= new Array<Categoria>();
   guitarras:Array<Producto>= new Array<Producto>();
   usu:Usuario= new Usuario();
+  textoBuscar:any=''
 
   constructor(private fireService:FireServiceProvider,
               private globalService:GlobalServiceService,
