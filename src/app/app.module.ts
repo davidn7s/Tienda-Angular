@@ -24,7 +24,6 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { HomeComponent } from './home/home.component';
 import { GuitarrasComponent } from './guitarras/guitarras.component';
 import { ProductoComponent } from './producto/producto.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
 import { PianosComponent } from './pianos/pianos.component';
 import { UpdateProdComponent } from './update-prod/update-prod.component';
 import { VientoMetalComponent } from './viento-metal/viento-metal.component';
@@ -45,7 +44,6 @@ import { FilterPipe } from './pipe/filter.pipe';
     HomeComponent,
     GuitarrasComponent,
     ProductoComponent,
-    UsuariosComponent,
     PianosComponent,
     UpdateProdComponent,
     VientoMetalComponent,

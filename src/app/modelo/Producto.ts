@@ -7,7 +7,7 @@ export class Producto{
     precio!: number;
     descripcion!: string;
     stock!: number;
-    imagen!: string;
+    imagen: string='';
 
     constructor() {
     }

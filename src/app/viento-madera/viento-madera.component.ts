@@ -49,4 +49,27 @@ export class VientoMaderaComponent {
   producto(producto:any){
     this.router.navigate(['/producto', producto])
   }
+
+  update(producto:any){
+    this.router.navigate(['/crear',producto])
+  }
+
+  borrar(p: any) {
+    //Elimino el producto del array
+    this.vmaderas.splice(this.vmaderas.indexOf(p), 1);
+
+
+    let categoria = new Categoria();
+    categoria.id = 'Viento Madera';
+    categoria.nombre = 'Viento Madera';
+    categoria.productos = this.vmaderas;
+
+    //Modifico la categoria con el producto borrado
+    this.fireService.modificarCategoria(categoria)
+      .then(() => {
+
+      }).catch((error) => {
+        console.log(error)
+      })
+  }
 }

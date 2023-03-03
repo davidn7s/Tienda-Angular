@@ -50,5 +50,27 @@ export class VientoMetalComponent {
     this.router.navigate(['/producto', producto])
   }
   
+  update(producto:any){
+    this.router.navigate(['/crear',producto])
+  }
+
+  borrar(p: any) {
+    //Elimino el producto del array
+    this.vmetales.splice(this.vmetales.indexOf(p), 1);
+
+
+    let categoria = new Categoria();
+    categoria.id = 'Viento Metal';
+    categoria.nombre = 'Viento Metal';
+    categoria.productos = this.vmetales;
+
+    //Modifico la categoria con el producto borrado
+    this.fireService.modificarCategoria(categoria)
+      .then(() => {
+
+      }).catch((error) => {
+        console.log(error)
+      })
+  }
 }
 

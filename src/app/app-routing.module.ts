@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { PianosComponent } from './pianos/pianos.component';
 import { ProductoComponent } from './producto/producto.component';
 import { RegistroComponent } from './registro/registro.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
+import { UpdateProdComponent } from './update-prod/update-prod.component';
 import { VientoMaderaComponent } from './viento-madera/viento-madera.component';
 import { VientoMetalComponent } from './viento-metal/viento-metal.component';
 
@@ -20,10 +20,10 @@ const routes: Routes = [
   {path:'home',component: HomeComponent},
   {path:'guitarras',component:GuitarrasComponent},
   {path:'producto',component:ProductoComponent},
-  {path:'usuarios',component:UsuariosComponent},
   {path:'pianos',component:PianosComponent},
   {path:'vmetal',component:VientoMetalComponent},
-  {path:'vmadera',component:VientoMaderaComponent}
+  {path:'vmadera',component:VientoMaderaComponent},
+  {path:'crear',component:UpdateProdComponent}
 ];
 
 @NgModule({

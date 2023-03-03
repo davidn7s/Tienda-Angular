@@ -67,8 +67,8 @@ export class NavbarComponent {
           url: '/vmadera',
         },
         {
-          title:'Usuarios',
-          url:'/usuarios'
+          title:'Nuevo Producto',
+          url:'/crear'
         },
         {
           title: 'Acerca de',
@@ -95,9 +95,7 @@ export class NavbarComponent {
     }
   }
 
-  navegar(link:any){
-    console.log(link)
-  }
+
 
  
 }

@@ -75,7 +75,6 @@ export class RegistroComponent implements OnInit {
     
     this.fireService.getUsuarioByEmail(values['email'])
     .then((usuario:Usuario)=>{
-      console.log(usuario.id)
       let control=this.comprobarUsuario(values['email']);
       if(control){
         alert('Este email ya está en uso')
@@ -113,7 +112,6 @@ export class RegistroComponent implements OnInit {
   comprobarUsuario(email:string):boolean|any{
     this.fireService.getUsuarioByEmail(email)
     .then((usuario:Usuario)=>{
-      console.log(usuario.id)
       if(usuario.id==undefined){
          return true
       }else{

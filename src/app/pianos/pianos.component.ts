@@ -13,42 +13,65 @@ import { Usuario } from '../modelo/Usuario';
 })
 export class PianosComponent {
 
-  categorias:Array<Categoria>= new Array<Categoria>();
-  pianos:Array<Producto>= new Array<Producto>();
-  usu:Usuario= new Usuario();
-  textoBuscar:any=''
+  categorias: Array<Categoria> = new Array<Categoria>();
+  pianos: Array<Producto> = new Array<Producto>();
+  usu: Usuario = new Usuario();
+  textoBuscar: any = ''
 
-  constructor(private fireService:FireServiceProvider,
-              private globalService:GlobalServiceService,
-              private router:Router){}
+  constructor(private fireService: FireServiceProvider,
+    private globalService: GlobalServiceService,
+    private router: Router) { }
 
-  ngAfterViewInit(){
-    this.usu=this.globalService.usuarioGlobal;
+  ngAfterViewInit() {
+    this.usu = this.globalService.usuarioGlobal;
     this.getPianos();
-   
+
   }
 
-  getPianos(){
+  getPianos() {
     this.fireService.getCategorias()
-    .then((element)=>{
-      this.categorias=element;
+      .then((element) => {
+        this.categorias = element;
 
-      this.categorias.forEach((data)=>{
-        data.productos.forEach((producto)=>{
-          if(producto.categoria=='Piano'){
-                this.pianos.push(producto);
-          }
+        this.categorias.forEach((data) => {
+          data.productos.forEach((producto) => {
+            if (producto.categoria == 'Piano') {
+              this.pianos.push(producto);
+            }
+          })
         })
+
+
+      }).catch((error: string) => {
+        console.log(error)
       })
-
-
-    }).catch((error:string)=>{
-      console.log(error)
-    })
   }
 
-  producto(producto:any){
+  producto(producto: any) {
     this.router.navigate(['/producto', producto])
   }
-  
+
+  update(producto: any) {
+    this.router.navigate(['/crear', producto])
+  }
+
+  borrar(p: any) {
+    //Elimino el producto del array
+    this.pianos.splice(this.pianos.indexOf(p), 1);
+
+
+    let categoria = new Categoria();
+    categoria.id = 'Piano';
+    categoria.nombre = 'Piano';
+    categoria.productos = this.pianos;
+
+    //Modifico la categoria con el producto borrado
+    this.fireService.modificarCategoria(categoria)
+      .then(() => {
+
+      }).catch((error) => {
+        console.log(error)
+      })
+
+  }
 }

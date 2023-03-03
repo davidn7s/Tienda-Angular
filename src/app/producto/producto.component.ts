@@ -24,7 +24,6 @@ export class ProductoComponent implements OnInit{
   ngOnInit(): void {
     this.sub=this.route.params.subscribe(params=>{
       this.producto=Producto.createFromJsonObject(params)
-      console.log(this.producto)
     })
 
     this.usu=this.globalService.usuarioGlobal;

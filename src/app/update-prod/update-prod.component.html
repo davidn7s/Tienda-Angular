@@ -1,2 +1,58 @@
-<!--  //IMPLEMENTAR FORMULARIO PARA CREAR Y O MODIFICAR PRODUCTO-->
-<p>  //IMPLEMENTAR FORMULARIO PARA CREAR Y O MODIFICAR PRODUCTO</p>
+<div class="container" >
+    <h3 class="centrar">Formulario</h3>
+
+    <label>Nombre</label>
+    <input type="text" [(ngModel)]="productoNuevo.nombre" class="form-control" />
+
+    <label>Categoría</label>
+    <select class="form-control" [(ngModel)]="productoNuevo.categoria">
+        <option value="Piano">Piano</option>
+        <option value="Guitarra">Guitarra</option>
+        <option value="Viento Metal">Viento metal</option>
+        <option value="Viento Madera">Viento madera</option>
+    </select>
+
+    <label>Instrumento</label>
+    <select class="form-control"  [(ngModel)]="productoNuevo.instrumento">
+        <option *ngIf="productoNuevo.categoria=='Piano'" value="Piano">Piano</option>
+        <option *ngIf="productoNuevo.categoria=='Guitarra'" value="Guitarra Electrica">Guitarra Eléctrica</option>
+        <option *ngIf="productoNuevo.categoria=='Guitarra'" value="Guitarra Acustica">Guitarra Acústica</option>
+        <option *ngIf="productoNuevo.categoria=='Viento Metal'" value="Trompeta">Trompeta</option>
+        <option *ngIf="productoNuevo.categoria=='Viento Metal'" value="Trombon">Trombón</option>
+        <option *ngIf="productoNuevo.categoria=='Viento Madera'" value="Clarinete">Clarinete</option>
+        <option *ngIf="productoNuevo.categoria=='Viento Madera'" value="Saxofon">Saxofón</option>
+    </select>
+
+
+    <label>Descripción</label>
+    <textarea class="form-control" [(ngModel)]="productoNuevo.descripcion"></textarea>
+
+    <label>Precio</label>
+    <input type="number" class="form-control" [(ngModel)]="productoNuevo.precio">
+
+    <label>Stock</label>
+    <input type="number" class="form-control" [(ngModel)]="productoNuevo.stock">
+
+
+    <br>
+
+    <!--Imagen-->
+    <div class="row" *ngIf="productoNuevo.imagen!=''">
+        <img class="form-control" height="150px"  src="{{productoNuevo.imagen}}" />
+    </div>
+
+
+    <br>
+    <!--Subir imagen-->
+    <input type="text" [(ngModel)]="productoNuevo.imagen" hidden>
+    <button class="centrar">
+        <input type="file" (change)="imageOnChange($event)" />
+    </button>
+
+    <br>
+    <div class="centrar"><button class="btn btn-success btn-lg" [disabled]="deshabilitar()" (click)="onSubmit()">Crear</button></div>
+
+
+
+
+</div>
