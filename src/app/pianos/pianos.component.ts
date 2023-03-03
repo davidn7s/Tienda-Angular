@@ -72,6 +72,6 @@ export class PianosComponent {
       }).catch((error) => {
         console.log(error)
       })
-
   }
+  
 }
