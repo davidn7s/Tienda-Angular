@@ -29,6 +29,7 @@ import { UpdateProdComponent } from './update-prod/update-prod.component';
 import { VientoMetalComponent } from './viento-metal/viento-metal.component';
 import { VientoMaderaComponent } from './viento-madera/viento-madera.component';
 import { FilterPipe } from './pipe/filter.pipe';
+import { CarritoComponent } from './carrito/carrito.component';
 
 
 
@@ -48,7 +49,8 @@ import { FilterPipe } from './pipe/filter.pipe';
     UpdateProdComponent,
     VientoMetalComponent,
     VientoMaderaComponent,
-    FilterPipe
+    FilterPipe,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

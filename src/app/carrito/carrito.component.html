@@ -1,0 +1,48 @@
+<div class="container">
+    <h3 class="centrar">Cesta</h3>
+    <br>
+    <div class="row" *ngIf="usuarioGlobal.productosCarro.length >=1">
+        <div class="col-7">
+
+
+            <div class="row" *ngFor="let producto of usuarioGlobal.productosCarro">
+                <div class="col-4" (click)="verProducto(producto.producto)">
+                    <img src={{producto.producto.imagen}} height="150" width="150">
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-9">
+                            {{producto.producto.nombre}}
+                        </div>
+                        <div class="col-5">
+                            <strong>&nbsp;{{producto.producto.precio}}€</strong>
+                        </div>
+                    </div>
+
+                    <div class="row final">
+                        <div class="col-9">
+                            <label>Cantidad: {{producto.cantidad}}</label>
+                        </div>
+                        <div class="col-3">
+                            <label class="eliminar" (click)="eliminar(producto)">Eliminar</label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr>
+            </div>
+
+        </div>
+
+        <div class="col-5">
+            <p class="borde">&nbsp; Subtotal ({{cantidadTotal}} productos): <strong>{{precioTotal}}€</strong></p>
+            <button class="btn btn-warning centrar" (click)="realizarPedido()">Comprar</button>
+        </div>
+
+    </div>
+
+    <div *ngIf="usuarioGlobal.productosCarro.length <1">
+        <h4 class="centrar">Su carro está vacio</h4>
+    </div>
+</div>

@@ -17,7 +17,8 @@
                 </div>
                 <hr>
                 <div id="boton"><button type="button" class="btn btn-secondary btn-lg"
-                        (click)="comprar()">Comprar</button></div>
+                        (click)="comprar()" *ngIf="producto.stock>=1">Comprar</button>
+                    <h3 *ngIf="producto.stock<=0" style="color: red;">El producto no tiene stock temporalmente</h3></div>
 
             </div>
         </div>

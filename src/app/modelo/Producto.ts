@@ -1,7 +1,6 @@
 export class Producto{
     id!: string;
     nombre!: string;
-    //El tipo se refiere a la categoria
     categoria!: string;
     instrumento!:string;
     precio!: number;

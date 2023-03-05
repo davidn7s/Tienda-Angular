@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Categoria } from 'src/app/modelo/Categoria';
+import { Pedido } from 'src/app/modelo/Pedido';
 import { Producto } from 'src/app/modelo/Producto';
  
 
@@ -150,6 +151,20 @@ export class FireServiceProvider {
                 });
         });
         return promise;
+    }//end_modificar_categoria
+
+
+    modificarUsuario(nuevosDatosUsuario: Usuario): Promise<Usuario> {
+        let promise = new Promise<Usuario>((resolve, reject) => {
+            this.angularFirestore.collection("Usuarios").doc(nuevosDatosUsuario.id).update(JSON.parse(JSON.stringify(nuevosDatosUsuario)))
+                .then(() => {
+                    resolve(nuevosDatosUsuario);
+                })
+                .catch((error: Error) => {
+                    reject(error.message);
+                });
+        });
+        return promise;
     }//end_modificar_noticia
 
 
@@ -177,19 +192,20 @@ export class FireServiceProvider {
     }//end_insertarUsuario
 
 
-    insertarCategoria(datosNuevoCategoria: Categoria): Promise<Categoria> {
-        let promise = new Promise<Categoria>((resolve, reject) => {
-            datosNuevoCategoria.id = this.angularFirestore.collection("Categorias").ref.doc().id;
-            this.angularFirestore.collection("Categorias").doc(datosNuevoCategoria.id).set(JSON.parse(JSON.stringify(datosNuevoCategoria)))
+
+    insertarPedido(datosNuevoPedido: Pedido): Promise<Pedido> {
+        let promise = new Promise<Pedido>((resolve, reject) => {
+            datosNuevoPedido.id = this.angularFirestore.collection("Pedidos").ref.doc().id;
+            this.angularFirestore.collection("Pedidos").doc(datosNuevoPedido.id).set(JSON.parse(JSON.stringify(datosNuevoPedido)))
                 .then(() => {
-                    resolve(datosNuevoCategoria);
+                    resolve(datosNuevoPedido);
                 })
                 .catch((error: Error) => {
                     reject(error.message);
                 });
         });
         return promise;
-    }//end_insertarNoticia
+    }//end_insertarCategoria
 
     
 

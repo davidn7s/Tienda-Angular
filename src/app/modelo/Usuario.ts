@@ -1,3 +1,5 @@
+import { ProductoCarro } from "./ProductoCarro";
+
 export class Usuario{
     id!:string;
     nombre!:string;
@@ -11,8 +13,7 @@ export class Usuario{
 
     administrador:boolean=false;
     
-    //pedidosRealizados:Pedido[];
-    //productosCarro:ProductoCarro[];
+    productosCarro:ProductoCarro[]=[];
 
     constructor() {
     }
@@ -35,18 +36,13 @@ export class Usuario{
         }
       
        
-        /*if(usuarioJson['pedidosRealizados'] != null){
-            usuario.pedidosRealizados = new Array<Pedido>();
-            usuarioJson['pedidosRealizados'].forEach(pedidoRealizadosJson => {
-                usuario.pedidosRealizados.push(Pedido.createFromJsonObject(pedidoRealizadosJson));
-            });
-        }
+       
         if(usuarioJson['productosCarro'] != null){
             usuario.productosCarro = new Array<ProductoCarro>();
-            usuarioJson['productosCarro'].forEach(productosCarroJson => {
+            usuarioJson['productosCarro'].forEach((productosCarroJson:any) => {
                 usuario.productosCarro.push(ProductoCarro.createFromJsonObject(productosCarroJson));
             });
-        }*/
+        }
         return usuario;
     }
 }

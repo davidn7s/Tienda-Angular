@@ -83,6 +83,7 @@ export class NavbarComponent {
     this.usuarioGlobal=new Usuario();
     this.globalService.usuarioGlobal=new Usuario();
     this.authService.logoutUser();
+    window.location.replace('/home')
   }
 
   conectado(){

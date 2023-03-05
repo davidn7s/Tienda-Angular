@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AcercaComponent } from './acerca/acerca.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 import { GuitarrasComponent } from './guitarras/guitarras.component';
 import { HomeComponent } from './home/home.component';
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:'pianos',component:PianosComponent},
   {path:'vmetal',component:VientoMetalComponent},
   {path:'vmadera',component:VientoMaderaComponent},
-  {path:'crear',component:UpdateProdComponent}
+  {path:'crear',component:UpdateProdComponent},
+  {path:'carrito',component:CarritoComponent}
 ];
 
 @NgModule({

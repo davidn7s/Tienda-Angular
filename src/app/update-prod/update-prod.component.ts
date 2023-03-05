@@ -165,6 +165,8 @@ export class UpdateProdComponent implements OnInit {
           categoria.id=producto.categoria;
           categoria.nombre=producto.categoria;
           categoria.productos=array
+
+          console.log(categoria)
     
           //Actualizo la categoria
           this.firebaseService.modificarCategoria(categoria)

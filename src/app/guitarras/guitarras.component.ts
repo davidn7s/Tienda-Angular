@@ -60,8 +60,8 @@ export class GuitarrasComponent {
 
 
     let categoria = new Categoria();
-    categoria.id = 'Guitarras';
-    categoria.nombre = 'Guitarras';
+    categoria.id = 'Guitarra';
+    categoria.nombre = 'Guitarra';
     categoria.productos = this.guitarras;
 
     //Modifico la categoria con el producto borrado
